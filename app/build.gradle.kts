@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.ksp) // Plugin para o processamento de símbolos do Room
+    alias(libs.plugins.ksp)
 }
 
 android {

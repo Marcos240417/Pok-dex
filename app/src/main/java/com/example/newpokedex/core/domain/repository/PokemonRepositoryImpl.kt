@@ -2,7 +2,7 @@ package com.example.newpokedex.core.domain.repository
 
 import com.example.newpokedex.core.dao.PokemonDao
 import com.example.newpokedex.core.data.local.entity.PokemonEntity
-import com.example.newpokedex.core.data.local.entity.PokemonWithDetails
+import com.example.newpokedex.core.data.local.PokemonWithDetails
 import com.example.newpokedex.core.remote.PokeApiService
 import com.example.newpokedex.core.remote.mapper.toEntity
 import com.example.newpokedex.core.remote.mapper.toMovesEntities

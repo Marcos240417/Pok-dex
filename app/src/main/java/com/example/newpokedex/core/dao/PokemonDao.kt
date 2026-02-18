@@ -8,7 +8,7 @@ import androidx.room.Transaction
 import com.example.newpokedex.core.data.local.entity.PokemonEntity
 import com.example.newpokedex.core.data.local.entity.PokemonMoveEntity
 import com.example.newpokedex.core.data.local.entity.PokemonStatEntity
-import com.example.newpokedex.core.data.local.entity.PokemonWithDetails
+import com.example.newpokedex.core.data.local.PokemonWithDetails
 import kotlinx.coroutines.flow.Flow
 
 

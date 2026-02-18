@@ -1,4 +1,4 @@
-package com.example.newpokedex.core.data.local
+package com.example.newpokedex.core.data.db
 
 import android.content.Context
 import androidx.room.Database
@@ -9,7 +9,6 @@ import com.example.newpokedex.core.data.local.entity.PokemonEntity
 import com.example.newpokedex.core.data.local.entity.PokemonEvolutionEntity
 import com.example.newpokedex.core.data.local.entity.PokemonMoveEntity
 import com.example.newpokedex.core.data.local.entity.PokemonStatEntity
-
 
 /**
  * @Database: Esta anotação define as configurações do banco.
@@ -25,7 +24,7 @@ import com.example.newpokedex.core.data.local.entity.PokemonStatEntity
         PokemonMoveEntity::class,
         PokemonEvolutionEntity::class
     ],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 abstract class PokemonDatabase : RoomDatabase() {

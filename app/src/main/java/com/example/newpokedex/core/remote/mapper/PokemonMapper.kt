@@ -5,17 +5,6 @@ import com.example.newpokedex.core.data.local.entity.PokemonMoveEntity
 import com.example.newpokedex.core.data.local.entity.PokemonStatEntity
 import com.example.newpokedex.core.remote.dto.PokemonDto
 
-/**
- * ARQUIVO: PokemonMapper.kt
- * OBJETIVO: Este arquivo contém funções de extensão que servem como "tradutores".
- * Elas pegam os objetos DTO (Data Transfer Object) vindos da internet e os
- * transformam em Entities (Entidades) que o banco de dados Room consegue entender.
- */
-
-/**
- * 1. Converte os dados básicos do Pokémon para a tabela principal.
- * Serve para preencher a PokemonEntity (nome, altura, peso, imagem e tipos).
- */
 fun PokemonDto.toEntity(): PokemonEntity {
     return PokemonEntity(
         // O ID da API é usado como PrimaryKey para evitar duplicatas
@@ -52,7 +41,7 @@ fun PokemonDto.toStatsEntities(): List<PokemonStatEntity> {
         PokemonStatEntity(
             pokemonId = this.id, // Chave estrangeira para o relacionamento
             nomeStat = dto.stat.name,
-            valorBase = dto.base_stat
+            valorBase = dto.basestat
         )
     }
 }

@@ -1,4 +1,4 @@
-package com.example.newpokedex.feature
+package com.example.newpokedex.feature.pokemonlist
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 // ADICIONE ESTE IMPORT (Verifique se o caminho do pacote está correto no seu projeto)
 import com.example.newpokedex.core.data.local.entity.PokemonEntity
+import com.example.newpokedex.feature.PokemonViewModel
 import org.koin.androidx.compose.koinViewModel
 
 
@@ -27,10 +28,9 @@ fun PokemonScreen(
     val pokemonList by viewModel.pokemonList.collectAsState()
     val isLoading by viewModel.isLoading.collectAsState()
 
-    // ESTADO DO SCROLL: Criado para monitorar a posição da lista
+
     val listState = rememberLazyListState()
 
-    // DETECTOR DE FIM DE LISTA: Dispara a busca quando o usuário chega ao final
     LaunchedEffect(listState) {
         snapshotFlow { listState.layoutInfo.visibleItemsInfo.lastOrNull()?.index }
             .collect { lastIndex ->

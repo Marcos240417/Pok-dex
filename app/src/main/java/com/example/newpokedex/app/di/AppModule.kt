@@ -1,6 +1,6 @@
-package com.example.newpokedex.core.di
+package com.example.newpokedex.app.di
 
-import com.example.newpokedex.core.data.local.PokemonDatabase
+import com.example.newpokedex.core.data.db.PokemonDatabase
 import com.example.newpokedex.core.domain.repository.PokemonRepository
 import com.example.newpokedex.core.domain.repository.PokemonRepositoryImpl
 import com.example.newpokedex.core.remote.PokeApiService

@@ -1,4 +1,4 @@
-package com.example.newpokedex.core.di
+package com.example.newpokedex.app.di
 
 import android.app.Application
 import org.koin.android.ext.koin.androidContext
