@@ -1,54 +1,67 @@
 package com.example.newpokedex.ui.theme
 
-import android.app.Activity
-import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.dynamicDarkColorScheme
-import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.graphics.Color
 
-private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
+private val DarkMetallicColorScheme = darkColorScheme(
+    primary = Color(0xFF00E5FF),
+    onPrimary = MetallicDark,
+    primaryContainer = Color(0xFF004D5A),
+    onPrimaryContainer = Color(0xFF80F4FF),
+
+    secondary = TitaniumSilver,
+    onSecondary = Color.Black,
+    secondaryContainer = Color(0xFF2B303C),
+    onSecondaryContainer = ChromeWhite,
+
+    tertiary = Color(0xFFFFD600),
+    onTertiary = Color.Black,
+
+    background = MetallicDark,
+    onBackground = ChromeWhite,
+
+    surface = MetallicCard,
+    onSurface = ChromeWhite,
+    surfaceVariant = Color(0xFF282E3A),
+    onSurfaceVariant = TitaniumSilver,
+
+    outline = Color(0xFF3F4756)
 )
 
-private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
-
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
+private val LightMetallicColorScheme = lightColorScheme(
+    primary = Color(0xFF00838F),
     onPrimary = Color.White,
+    primaryContainer = Color(0xFFB2EBF2),
+    onPrimaryContainer = Color(0xFF00363D),
+
+    secondary = Color(0xFF5C6B73),
     onSecondary = Color.White,
+
+    tertiary = Color(0xFFC67D00),
     onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+
+    background = Color(0xFFE9ECEF),
+    onBackground = Color(0xFF191C1E),
+
+    surface = Color(0xFFF8F9FA),
+    onSurface = Color(0xFF191C1E),
+    surfaceVariant = Color(0xFFDEE2E6),
+    onSurfaceVariant = Color(0xFF40484C),
+
+    outline = Color(0xFFB0BEC5)
 )
 
 @Composable
 fun NewPokedexTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
+    dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
-    val colorScheme = when {
-        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-            val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-        }
-
-        darkTheme -> DarkColorScheme
-        else -> LightColorScheme
-    }
+    val colorScheme = if (darkTheme) DarkMetallicColorScheme else LightMetallicColorScheme
 
     MaterialTheme(
         colorScheme = colorScheme,
