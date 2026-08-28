@@ -7,20 +7,21 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-// CORREÇÃO: Certifique-se de que o import da Screen está correto
-import com.example.newpokedex.feature.pokemonlist.PokemonScreen
+import androidx.navigation.compose.rememberNavController
+import com.example.newpokedex.core.presentation.navigation.SetupNavGraph
+import com.example.newpokedex.ui.theme.NewPokedexTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MaterialTheme {
-                // Surface deve envolver a Screen para aplicar as cores do tema
+            NewPokedexTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    PokemonScreen() // Agora chamada dentro do contexto Composable
+                    val navController = rememberNavController()
+                    SetupNavGraph(navController = navController)
                 }
             }
         }
