@@ -1,22 +1,14 @@
-package com.example.newpokedex.core.data.db
+package com.example.newpokedex.core.data.local.db
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.newpokedex.core.dao.PokemonDao
+import com.example.newpokedex.core.data.local.dao.PokemonDao
 import com.example.newpokedex.core.data.local.entity.PokemonEntity
 import com.example.newpokedex.core.data.local.entity.PokemonEvolutionEntity
 import com.example.newpokedex.core.data.local.entity.PokemonMoveEntity
 import com.example.newpokedex.core.data.local.entity.PokemonStatEntity
-
-/**
- * @Database: Esta anotação define as configurações do banco.
- * entities: Lista todas as tabelas que o banco deve criar.
- * version: O número da versão. Se você mudar a estrutura das tabelas no futuro,
- * deverá aumentar este número para o Room saber que houve uma mudança.
- * exportSchema: Quando true, gera um arquivo JSON com a estrutura do banco (útil para histórico).
- */
 @Database(
     entities = [
         PokemonEntity::class,
